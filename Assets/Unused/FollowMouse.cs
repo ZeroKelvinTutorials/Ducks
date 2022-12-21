@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FollowMouse : Follower
+public class FollowMouse : Following
 {
     //constructor that calls base class constructor
     public FollowMouse(Transform ownerTransform, float followDistance) : base(ownerTransform, followDistance)
@@ -12,9 +12,8 @@ public class FollowMouse : Follower
     //outputs new position and rotation
     public void Follow(out Vector3 position, out Quaternion rotation)
     {
-        Debug.Log("following mouse");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        Follow(mousePos, out position, out rotation);
+        base.FollowPosition(mousePos, out position, out rotation);
     }
 }
