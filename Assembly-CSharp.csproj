@@ -37,15 +37,15 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Duck.cs" />
-     <Compile Include="Assets/DuckManager.cs" />
-     <Compile Include="Assets/MamaDuck.cs" />
-     <Compile Include="Assets/Unused/Following.cs" />
-     <Compile Include="Assets/FollowingMouse.cs" />
-     <Compile Include="Assets/Unused/Follower.cs" />
+     <Compile Include="Assets/FollowingTransform.cs" />
      <Compile Include="Assets/Unused/FollowTransform.cs" />
+     <Compile Include="Assets/MamaDuck.cs" />
+     <Compile Include="Assets/Unused/Follower.cs" />
+     <Compile Include="Assets/FollowingMouse.cs" />
      <Compile Include="Assets/IFollowing.cs" />
      <Compile Include="Assets/Unused/FollowMouse.cs" />
-     <Compile Include="Assets/FollowingTransform.cs" />
+     <Compile Include="Assets/Unused/Following.cs" />
+     <Compile Include="Assets/DuckManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.15f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
