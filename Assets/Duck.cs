@@ -6,7 +6,7 @@ using UnityEngine;
 //Wanders, Quacks
 public class Duck : MonoBehaviour
 {
-    public IFollowing _following;
+    public Follower _following;
 
     public virtual void OnEnable()
     {
@@ -21,14 +21,14 @@ public class Duck : MonoBehaviour
     //Starts following target transform at max desired proximity distance
     public void StartFollowingTransform(Transform followTransform, float distance)
     {
-        _following = new FollowingTransform(this.transform, distance, followTransform);
+        _following = new TransformFollower(this.transform, distance, followTransform);
         _following.StartFollowing();
     }
 
     //Starts following mouse at max desired proximity distance
     public void StartFollowingMouse(float distance)
     {
-        _following = new FollowingMouse(this.transform, distance);
+        _following = new MouseFollower(this.transform, distance);
         _following.StartFollowing();
     }
 
