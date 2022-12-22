@@ -1,23 +1,34 @@
 using UnityEngine;
 
-
 public class FollowingTransform : IFollowing
 {
+
+    Transform FollowTransform { get; set; }
+
+    //IFollowing properties
+    public IFollowing iFollowing { get { return this; } }
     public bool IsFollowing { get; set; }
-    public Transform _ownerTransform { get; set; }
-    public float _followDistance { get; set; }
+    public Transform OwnerTransform { get; set; }
+    public float FollowDistance { get; set; }
+    public float MovementSpeed { get; set; } = 1.3f;
+    public float RotationSpeed { get; set; } = 100;
 
-    Transform _followTransform { get; set; }
-
+    //Constructor
     public FollowingTransform(Transform ownerTransform, float followDistance, Transform followTransform)
     {
-        _ownerTransform = ownerTransform;
-        _followDistance = followDistance;
-        _followTransform = followTransform;
+        this.OwnerTransform = ownerTransform;
+        this.FollowDistance = followDistance;
+        this.FollowTransform = followTransform;
     }
-    public void Follow(out Vector3 pos, out Quaternion rot)
+
+    //IFollowing methods
+    public Vector3 GetNextPosition()
     {
-        IFollowing iFollowing = this;
-        iFollowing.FollowPosition(_followTransform.position, out pos, out rot);
+        return iFollowing.GetNextPosition(FollowTransform.position);
     }
+    public Quaternion GetNextRotation()
+    {
+        return iFollowing.GetNextRotation(FollowTransform.position);
+    }
+
 }

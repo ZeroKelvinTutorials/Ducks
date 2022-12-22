@@ -1,33 +1,37 @@
 using UnityEngine;
 public interface IFollowing
 {
+    IFollowing iFollowing { get; }
     bool IsFollowing { get; set; }
-    Transform _ownerTransform { get; set; }
-    float _followDistance { get; set; }
-
-    void Follow(out Vector3 pos, out Quaternion rot);
+    Transform OwnerTransform { get; set; }
+    float FollowDistance { get; set; }
+    float MovementSpeed { get; set; }
+    float RotationSpeed { get; set; }
 
     void StartFollowing()
     {
         IsFollowing = true;
     }
-
-    void FollowPosition(Vector3 targetPosition, out Vector3 position, out Quaternion rotation)
+    Vector3 GetNextPosition(); //abstract (must be implemented wherever interface is implemented)
+    Vector3 GetNextPosition(Vector3 targetPosition)
     {
-        Debug.Log(targetPosition + " " + _ownerTransform.position);
-        position = _ownerTransform.position;
-
-        //move towards target if further than distance
-        if (Vector3.Distance(targetPosition, _ownerTransform.position) > _followDistance)
+        if (Vector3.Distance(targetPosition, OwnerTransform.position) > FollowDistance)
         {
-            position = Vector3.MoveTowards(_ownerTransform.position, targetPosition, 1f * Time.deltaTime);
+            //returns a position from current position towards targetPosition
+            Vector3 pos = Vector3.MoveTowards(OwnerTransform.position, targetPosition, MovementSpeed * Time.deltaTime);
+            Debug.Log(Vector3.Distance(pos, OwnerTransform.position) + " " + Time.deltaTime);
+            return pos;
         }
-
-        //rotate towards target
-        Vector3 targetDirection = targetPosition - _ownerTransform.position;
+        return OwnerTransform.position;
+    }
+    Quaternion GetNextRotation(); //abstract (must be implemented wherever interface is implemented)
+    Quaternion GetNextRotation(Vector3 targetPosition)
+    {
+        Vector3 targetDirection = targetPosition - OwnerTransform.position;
         float targetAngle = (Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg);
         Quaternion newQuaternion = Quaternion.AngleAxis(targetAngle, Vector3.forward);
 
-        rotation = Quaternion.RotateTowards(_ownerTransform.rotation, newQuaternion, 100 * Time.deltaTime);
+        //returns a rotation from current rotation towards fully rotated towards targetPosition
+        return Quaternion.RotateTowards(OwnerTransform.rotation, newQuaternion, RotationSpeed * Time.deltaTime);
     }
 }

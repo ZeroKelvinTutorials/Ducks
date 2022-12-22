@@ -21,7 +21,7 @@ public class DuckManager : MonoBehaviour
     {
 
         //First duck starts following mouse
-        Ducks[0].StartFollowingMouse(distance: 1);
+        Ducks[0].StartFollowingMouse(distance: 1.5f);
 
         //the rest of the ducks follow the previous ducks
         for (int i = 1; i < Ducks.Count; i++)
