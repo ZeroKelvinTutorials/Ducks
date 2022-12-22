@@ -18,14 +18,12 @@ public class FollowingMouse : IFollowing
     public bool IsFollowing { get; set; }
     public Transform OwnerTransform { get; set; }
     public float FollowDistance { get; set; }
-    public float MovementSpeed { get; set; } = 2;
-    public float RotationSpeed { get; set; } = 300;
+    public float MovementSpeed { get; set; } = 1; //default value of 1
 
     //Constructor
-    public FollowingMouse(Transform ownerTransform, float followDistance)
+    public FollowingMouse(Transform ownerTransform)
     {
         OwnerTransform = ownerTransform;
-        FollowDistance = followDistance;
     }
 
     //IFollowing methods

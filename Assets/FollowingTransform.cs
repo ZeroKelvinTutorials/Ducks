@@ -10,14 +10,12 @@ public class FollowingTransform : IFollowing
     public bool IsFollowing { get; set; }
     public Transform OwnerTransform { get; set; }
     public float FollowDistance { get; set; }
-    public float MovementSpeed { get; set; } = 1.3f;
-    public float RotationSpeed { get; set; } = 100;
+    public float MovementSpeed { get; set; } = 1; //default value of 1
 
     //Constructor
-    public FollowingTransform(Transform ownerTransform, float followDistance, Transform followTransform)
+    public FollowingTransform(Transform ownerTransform, Transform followTransform)
     {
         this.OwnerTransform = ownerTransform;
-        this.FollowDistance = followDistance;
         this.FollowTransform = followTransform;
     }
 

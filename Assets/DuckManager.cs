@@ -21,12 +21,15 @@ public class DuckManager : MonoBehaviour
     {
 
         //First duck starts following mouse
-        Ducks[0].StartFollowingMouse(distance: 1.5f);
+        Ducks[0].StartFollowingMouse(distance: 1.5f, speed: 2);
 
         //the rest of the ducks follow the previous ducks
         for (int i = 1; i < Ducks.Count; i++)
         {
-            Ducks[i].StartFollowingTransform(followTransform: Ducks[i - 1].transform, distance: 1.3f);
+            Ducks[i].StartFollowingTransform(
+                followTransform: Ducks[i - 1].transform,
+                distance: 1.3f,
+                speed: 1.5f);
         }
 
     }
