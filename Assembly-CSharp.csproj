@@ -36,15 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Duck.cs" />
-     <Compile Include="Assets/FollowingTransform.cs" />
-     <Compile Include="Assets/MamaDuck.cs" />
-     <Compile Include="Assets/Unused/Follower.cs" />
-     <Compile Include="Assets/FollowingMouse.cs" />
-     <Compile Include="Assets/IFollowing.cs" />
-     <Compile Include="Assets/DuckManager.cs" />
-     <Compile Include="Assets/Unused/TransformFollower.cs" />
-     <Compile Include="Assets/Unused/MouseFollower.cs" />
+     <Compile Include="Assets/Scripts/Duck.cs" />
+     <Compile Include="Assets/Scripts/FollowInterface/FollowingTransform.cs" />
+     <Compile Include="Assets/Scripts/MamaDuck.cs" />
+     <Compile Include="Assets/Scripts/FollowInterface/FollowingMouse.cs" />
+     <Compile Include="Assets/Scripts/FollowInterface/IFollowing.cs" />
+     <Compile Include="Assets/Scripts/DuckManager.cs" />
+     <Compile Include="Assets/Scripts/FollowClass/TransformFollower.cs" />
+     <Compile Include="Assets/Scripts/FollowClass/MouseFollower.cs" />
+     <Compile Include="Assets/Scripts/FollowClass/Follower.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
