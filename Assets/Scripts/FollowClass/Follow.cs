@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public abstract class Follower
+public abstract class Follow
 {
 
     public bool IsFollowing;
-    private Transform _ownerTransform;
+
+    // movement/rotation variables
+    private Transform _ownerTransform; //self
     private float _followDistance;
     private float _movementSpeed;
 
-    //Constructor
-    public Follower(Transform ownerTransform)
+    //Constructor, called on the constructor of classes that inherit it
+    public Follow(Transform ownerTransform)
     {
         _ownerTransform = ownerTransform;
     }
@@ -17,6 +19,7 @@ public abstract class Follower
     public void StartFollowing(float distance, float speed)
     {
         _followDistance = distance;
+        _movementSpeed = speed;
         IsFollowing = true;
     }
 

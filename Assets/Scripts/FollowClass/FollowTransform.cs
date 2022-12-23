@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class TransformFollower : Follower
+public class FollowTransform : Follow
 {
-    Transform _followTransform;
+    private Transform _followTransform;
 
-    public TransformFollower(Transform ownerTransform, Transform followTransform) : base(ownerTransform)
+    //constructor
+    public FollowTransform(Transform ownerTransform, Transform followTransform) : base(ownerTransform)
     {
         _followTransform = followTransform;
     }

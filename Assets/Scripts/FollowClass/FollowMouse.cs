@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MouseFollower : Follower
+public class FollowMouse : Follow
 {
     Vector3 mousePosition
     {
@@ -13,7 +13,7 @@ public class MouseFollower : Follower
     }
 
     //constructor that calls base class constructor
-    public MouseFollower(Transform ownerTransform) : base(ownerTransform)
+    public FollowMouse(Transform ownerTransform) : base(ownerTransform)
     {
 
     }
