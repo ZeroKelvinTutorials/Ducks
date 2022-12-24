@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FollowMouse : Follow
 {
+    //this is a FollowMouse specific Property (not from Follow abstract class)
     Vector3 mousePosition
     {
         get
@@ -12,18 +13,20 @@ public class FollowMouse : Follow
         }
     }
 
-    //constructor that calls base class constructor
-    public FollowMouse(Transform ownerTransform) : base(ownerTransform)
-    {
+    //constructor which calls base class constructor (Follow(ownerTransform)
+    public FollowMouse(Transform ownerTransform) : base(ownerTransform) { }
 
-    }
-
+    //overrides Follow.GetNextPosition()
     public override Vector3 GetNextPosition()
     {
+        //returns Follow.GetNextPosition(Vector3)
         return GetNextPosition(mousePosition);
     }
+
+    //overrides Follow.GetNextRotation()
     public override Quaternion GetNextRotation()
     {
+        //returns Follow.GetNextRotation(Vector3)
         return GetNextRotation(mousePosition);
     }
 }

@@ -1,3 +1,4 @@
+
 public class MamaDuck : Duck
 {
     //Adds her to the duck list at the first index

@@ -4,7 +4,7 @@ using UnityEngine;
 //Capable of following mouse or transforms, quacks
 public class Duck : MonoBehaviour
 {
-    //can be either TransformFollower or MouseFollower
+    //can be either FollowTransform or FollowMouse
     //which are classes that implement the Follower abstract class
     private Follow _follow;
 
@@ -17,14 +17,14 @@ public class Duck : MonoBehaviour
         DuckManager.Ducks.Remove(this);
     }
 
-    //initializes _follow with new TransformFollower class
+    //initializes _follow with new FollowTransform class
     public void StartFollowingTransform(Transform followTransform, float distance, float speed)
     {
         _follow = new FollowTransform(this.transform, followTransform);
         _follow.StartFollowing(distance, speed);
     }
 
-    //Initializes _follow with new MouseFollower class
+    //Initializes _follow with new FollowMouse class
     public void StartFollowingMouse(float distance, float speed)
     {
         _follow = new FollowMouse(this.transform);
