@@ -17,7 +17,6 @@ public class DuckManager : MonoBehaviour
 
     void GetDucksInARow()
     {
-
         //First duck starts following mouse
         Ducks[0].StartFollowingMouse(distance: 1.5f, speed: 2);
 
@@ -29,6 +28,5 @@ public class DuckManager : MonoBehaviour
                 distance: 1.3f,
                 speed: 1.5f);
         }
-
     }
 }

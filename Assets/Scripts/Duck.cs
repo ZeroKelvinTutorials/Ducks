@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-//Capable of following mouse or transforms, quacks
+//Capable of following mouse or transforms. quacks
 public class Duck : MonoBehaviour
 {
     //can be either FollowTransform or FollowMouse
